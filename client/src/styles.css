@@ -1,0 +1,86 @@
+.App {
+    background-color: rgb(24,25,26);
+    height: 100vh;
+}
+
+.Navbar {
+    background-color: rgb(36,37,38);
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+    margin-bottom: 90px;
+}
+
+.Navbar * {
+    display: inline;
+}
+
+.Navbar li {
+    margin: 20px;
+}
+
+.Navbar li a {
+    color: white;
+    text-decoration: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    font-size: x-large;
+}
+
+
+.Navbar_Logo {
+    width: auto;
+    height: 200%;
+    padding-top: 75px;
+}
+
+.Listings_Container {
+display: flex;
+flex-wrap: wrap;
+width: 100%;
+justify-content: center;
+}
+
+.Cabinet_Image{
+    height: 200px;
+    width: 160px;
+}
+
+.Listing_Display {
+    background-color: rgb(36,37,38);
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+    padding: 20px;
+    box-shadow: 0 0 25px 0 black;
+    margin: 10px;
+}
+
+.Form_Div {
+    background-color: rgb(36,37,38);
+    display: flex;
+    width: 30%;
+    justify-content: center;
+    border: 2px solid black;
+    padding: 20px;
+    box-shadow: 0 0 25px 0 black;
+    margin: auto;
+}
+
+.Form_Container {
+    display: flex;
+    justify-content: center;
+}
+
+.Form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
