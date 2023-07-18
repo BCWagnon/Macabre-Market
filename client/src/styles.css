@@ -1,7 +1,15 @@
+@font-face {
+    font-family: "carnival";
+    src: url(./Fonts/carnivalee-freakshow.regular.ttf);
+}
+
 .App {
     background-color: rgb(24,25,26);
-    height: 100vh;
+    height: 200vh;
+    font-family: "carnival";
+    color: white;
 }
+
 
 .Navbar {
     background-color: rgb(36,37,38);
@@ -12,7 +20,8 @@
     display: flex;
     align-items: center;
     box-shadow: 0 0 25px 0 black;
-    margin-bottom: 90px;
+    margin-bottom: 50px;
+    color: white;
 }
 
 .Navbar * {
@@ -20,21 +29,28 @@
 }
 
 .Navbar li {
-    margin: 20px;
+    margin: 30px;
 }
 
 .Navbar li a {
     color: white;
     text-decoration: none;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
     font-size: x-large;
 }
 
-
 .Navbar_Logo {
     width: auto;
-    height: 200%;
-    padding-top: 75px;
+    height: 250%;
+    padding-top: 90px;
+}
+
+.Navbar_Title {
+    width: 300px;
+}
+
+.Main_Container {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .Listings_Container {
@@ -42,6 +58,8 @@ display: flex;
 flex-wrap: wrap;
 width: 100%;
 justify-content: center;
+background-color: rgb(255, 255, 255, 0.1);
+height: 100vh;
 }
 
 .Cabinet_Image{
@@ -83,4 +101,16 @@ justify-content: center;
     flex-direction: column;
     align-items: center;
     color: white;
+}
+
+.Listings_Title {
+    color: white;
+    padding-left: 30px;
+}
+
+.Banner_Img {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    box-shadow: 0 0 25px 0 black;
 }
