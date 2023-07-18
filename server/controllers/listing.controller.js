@@ -1,9 +1,10 @@
 const Listing = require('../models/listing.model');  
 
 module.exports.createListing = (request, response) => {
+    console.log(request.body);
     Listing.create(request.body) 
         .then(listing => response.json(listing))
-
+        
         .catch(err => response.status(400).json(err))
 }
 

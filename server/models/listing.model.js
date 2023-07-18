@@ -15,7 +15,7 @@ const ListingSchema = new mongoose.Schema({
             "Price is required"
         ]
     },
-    itemDescription: { 
+    itemDesc: { 
         type: String,
         required: [
             true,

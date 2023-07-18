@@ -1,8 +1,6 @@
 const Controller = require('../controllers/listing.controller')
 module.exports = (app) => {
-    app.post('/api/listing', function(req, res) {
-        Controller.createListing
-    });
+    app.post('/api/listing', Controller.createListing);
 
     app.get('/api/listing', Controller.getAllListings)
     app.delete('/api/listing/:id', Controller.deleteListing)
