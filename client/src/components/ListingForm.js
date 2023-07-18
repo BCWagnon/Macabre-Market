@@ -9,6 +9,7 @@ const ListingForm= (props) => {
     const [itemName, setItemName] = useState('');
     const [itemPrice, setItemPrice] = useState('');
     const [itemDesc, setItemDesc] = useState('');
+    const [errors, setErrors] = useState([]); 
     const navigate = useNavigate();
 
     const onSubmitHandler = (e) => {
@@ -22,30 +23,41 @@ const ListingForm= (props) => {
 
         .then(res => {navigate("/"); 
         })
-        .catch(err => console.log(err))
+        .catch(err => {
+            const errorResponse = err.response.data.errors;
+
+            const errorArr = [];
+            for (const key of Object.keys(errorResponse)) {
+                    errorArr.push(errorResponse[key].message)
+                }
+                setErrors(errorArr);
+        })
     }
 
 
     return (
         <div className="Form_Div">
             <form className="Form" onSubmit={onSubmitHandler}>
+            {errors.map((err, index) => (
+                    <p key="{index}">{err}</p>
+                ))}
                 <p>
                     <h1>Create New Listing</h1>
                 </p>
                 <div className="Form">
                     <p>
                         <label>Item Name: </label>
-                        <input type="text" onChange = {(e)=>setItemName(e.target.value)}/>
+                        <input type="text" onChange = {(e)=>setItemName(e.target.value)} required/>
                     </p>
 
                     <p>
                         <label>Price: </label>
-                        <input type="number" onChange = {(e)=>setItemPrice(e.target.value)}/>
+                        <input type="text" onChange = {(e)=>setItemPrice(e.target.value)} required/>
                     </p>
 
                     <p>
                         <label>Description: </label>
-                        <input type="text" onChange = {(e)=>setItemDesc(e.target.value)}/>
+                        <input type="text" onChange = {(e)=>setItemDesc(e.target.value)} required/>
                     </p>
                 </div>
 

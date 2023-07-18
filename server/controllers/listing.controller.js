@@ -3,8 +3,8 @@ const Listing = require('../models/listing.model');
 module.exports.createListing = (request, response) => {
     Listing.create(request.body) 
         .then(listing => response.json(listing))
-        
-        .catch(err => response.json(err));
+
+        .catch(err => response.status(400).json(err))
 }
 
 module.exports.getAllListings = (request, response) => {
