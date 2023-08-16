@@ -28,6 +28,11 @@ module.exports.getListing = (request, response) => {
         .catch(err => response.json(err));
 }
 
+module.exports.getListing = (request, response) => {
+    Listing.findOne({_id:request.params.id})
+        .then(listing => response.json(listing))
+        .catch(err => response.json(err));
+}
 
 module.exports.updateListing = (request, response) => {
     Listing.findOneAndUpdate({_id: request.params.id}, request.body, {new:true})

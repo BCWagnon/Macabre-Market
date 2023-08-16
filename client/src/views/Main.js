@@ -12,7 +12,7 @@ const Main = (props) => {
     }
     
     return (
-        <div>
+        <div className="Main_Container">
             <img className="Banner_Img" src={banner} alt="Banner"/>
 
             <h1 className="Listings_Title">All Listings</h1>

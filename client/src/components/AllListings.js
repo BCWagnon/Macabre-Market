@@ -38,7 +38,7 @@ const AllListings = (props) => {
                 return (
                     <div className="Listing_Display" key={index}> 
                         <img src={Cabinet} className="Cabinet_Image"/>
-                        <p>{listing.itemName}</p>
+                        <Link to={"/listing/" + listing._id}>{listing.itemName}</Link>
                         <Link to={"/listing/edit/" + listing._id}>Edit</Link>
                         <button onClick={(e)=>{deleteListing(listing._id)}}>Delete</button>
                     </div> 

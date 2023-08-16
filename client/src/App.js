@@ -4,6 +4,7 @@ import Main from '../src/views/Main';
 import Update from './components/UpdateForm';
 import Form from './views/Form';
 import Navbar from './components/Navbar';
+import Details from './components/Details';
 import './styles.css'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route element={<Main/>} path="/" default /> 
             <Route element={<Form/>} path="/create"/>
             <Route element={<Update/>} path="/listing/edit/:id"/>
+            <Route element={<Details/>} path="/listing/:id"/>
           </Routes>
       </BrowserRouter>
     </div>
