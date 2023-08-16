@@ -18,10 +18,10 @@ const Details = (props) => {
     }, []);
 
     return (
-        <div>
-            <p>Product Name: {listing.listingName}</p>
-            <p>Price: ${listing.listingPrice}</p>
-            <p>Description: {listing.listingDescription}</p>
+        <div className="Details">
+            <p>Product Name : {listing.itemName}</p>
+            <p>Price : ${listing.itemPrice}</p>
+            <p>Description : {listing.itemDescription}</p>
         </div>
     )
 }
