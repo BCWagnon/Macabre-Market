@@ -9,7 +9,8 @@ const ListingForm= (props) => {
     const [itemName, setItemName] = useState('');
     const [itemPrice, setItemPrice] = useState('');
     const [itemDesc, setItemDesc] = useState('');
-    const [errors, setErrors] = useState([]); 
+    const [errors, setErrors] = useState([]);
+    const [image, setImage] = useState('')
     const navigate = useNavigate();
 
     const onSubmitHandler = (e) => {
@@ -34,16 +35,37 @@ const ListingForm= (props) => {
         })
     }
 
+    function convertToBase64(e){
+        console.log(e.target.files);
+        var reader = new FileReader();
+        reader.readAsDataURL(e.target.files[0]);
+        reader.onload = () => {
+            console.log(reader.result);
+            setImage(reader.result)
+        };
+        reader.oneerror = error => {
+            console.log("Error:", error);
+        };
+    }
 
     return (
         <div className="Form_Div">
             <form className="Form" onSubmit={onSubmitHandler}>
+            
             {errors.map((err, index) => (
                     <p key="{index}">{err}</p>
                 ))}
                 <p>
                     <h1>Create New Listing</h1>
                 </p>
+                <div> 
+                    <input
+                    accept='image/*'
+                    type='file'
+                    onChange={convertToBase64}
+                    />
+                    {image==''|| image==null?'': <img width={100} height={100} src={image}/>}
+                </div>
                 <div className="Form">
                     <p>
                         <label>Item Name: </label>
